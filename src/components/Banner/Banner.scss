@@ -1,0 +1,39 @@
+@import "../../styles/index.scss";
+
+.banner {
+  background-color: $mirageBlue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 0 15px;
+
+  @include lg {
+    padding: 0 25px;
+  }
+}
+
+.banner__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1000;
+
+  @include lg {
+    margin-top: 100px;
+    align-items: flex-start;
+  }
+}
+
+.banner__wrapper {
+  z-index: 1000;
+  max-width: 1110px;
+
+  @include lg {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

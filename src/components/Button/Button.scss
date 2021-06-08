@@ -1,0 +1,30 @@
+@import "../../styles/index.scss";
+
+.button {
+  margin-bottom: 80px;
+
+  @include lg {
+    margin-bottom: 100px;
+  }
+}
+
+.button__inner {
+  width: 130px;
+  border: 1px solid $linkWaterWhite;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $linkWaterWhite;
+}
+
+.button__inner:hover {
+  background-color: $linkWaterWhite;
+  color: $mirageBlue;
+}
+
+.button__text {
+  @include simple-text(15px, 18px);
+  font-weight: 700;
+  margin: 15px 0;
+}
