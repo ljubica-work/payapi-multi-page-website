@@ -2,9 +2,9 @@ import React from 'react';
 
 import './Title.scss';
 
-const Title = ({text}) => {
+const Title = ({text, className}) => {
   return (
-    <h2 className='title title--light'>{text}</h2>
+    <h2 className={`title ${className}`}>{text}</h2>
   );
 }
 

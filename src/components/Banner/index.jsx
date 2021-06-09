@@ -8,15 +8,17 @@ import Circle from '../Circle';
 import './Banner.scss';
 
 const Banner = () => {
+
+
   return (
     <div className='banner'>
-      <Circle />
+      <Circle className={'banner__circle'}/>
       <div className='banner__wrapper'>
-        <Partners />
+        <Partners className={'banner__partners'} imageColor={'white'}/>
         <div className='banner__inner'>
-          <Title text={'Who we work with'}/>
-          <Paragraph />
-          <Button text={'About Us'}/>
+          <Title className={'banner__title'} text={'Who we work with'} />
+          <Paragraph className={'banner__paragraph'}/>
+          <Button className={'banner__button'} text={'About Us'}/>
         </div>
       </div>
     </div>

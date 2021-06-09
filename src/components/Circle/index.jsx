@@ -2,9 +2,9 @@ import React from 'react';
 
 import './Circle.scss';
 
-const Circle = () => {
+const Circle = ({className}) => {
   return (
-    <div className='circle circle--dark circle--banner'></div>
+    <div className={`circle ${className}`}></div>
   );
 }
 
