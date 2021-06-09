@@ -12,13 +12,13 @@ const Banner = () => {
 
   return (
     <div className='banner'>
-      <Circle className={'banner__circle'}/>
+      <Circle className='banner__circle'/>
       <div className='banner__wrapper'>
-        <Partners className={'banner__partners'} imageColor={'white'}/>
+        <Partners className='banner__partners' imageColor='white'/>
         <div className='banner__inner'>
-          <Title className={'banner__title'} text={'Who we work with'} />
-          <Paragraph className={'banner__paragraph'}/>
-          <Button className={'banner__button'} text={'About Us'}/>
+          <Title className='banner__title' text='Who we work with'/>
+          <Paragraph className='banner__paragraph'/>
+          <Button className='banner__button' text='About Us'/>
         </div>
       </div>
     </div>

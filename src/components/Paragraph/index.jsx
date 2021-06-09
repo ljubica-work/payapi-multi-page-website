@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './Paragraph.scss';
 
@@ -10,6 +11,10 @@ const Paragraph = ({className}) => {
       </p>
     </div>
   );
+}
+
+Paragraph.propTypes = {
+  className: PropTypes.string
 }
 
 
