@@ -1,0 +1,13 @@
+@import "fonts.scss";
+
+@mixin title-h2($fontSize: 48px, $lineHeight: 56px) {
+  font-family: DMSerif;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+}
+
+@mixin simple-text($fontSize: 15px, $lineHeight: 28px) {
+  font-family: PublicSans;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+}

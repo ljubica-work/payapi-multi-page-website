@@ -1,0 +1,21 @@
+@import "../../styles/index.scss";
+
+.circle {
+  height: 780px;
+  width: 780px;
+  border-radius: 50%;
+  position: absolute;
+  top: -610px;
+  @include md {
+    top: -545px;
+  }
+
+  @include lg {
+    top: -360px;
+    left: -230px;
+  }
+}
+
+.circle--dark {
+  background-color: $sanJuanBlue;
+}
