@@ -37,3 +37,52 @@
     justify-content: space-between;
   }
 }
+
+.banner__circle {
+  top: -610px;
+  background-color: $sanJuanBlue;
+
+  @include md {
+    top: -545px;
+  }
+
+  @include lg {
+    top: -360px;
+    left: -230px;
+  }
+}
+
+.banner__partners {
+  margin: 40px auto 60px auto;
+
+  @include md {
+    max-width: 540px;
+    margin-bottom: 65px;
+  }
+
+  @include lg {
+    max-width: 45%;
+    margin: 0 0 0 5%;
+  }
+}
+
+.banner__title {
+  color: $linkWaterWhite;
+}
+
+.banner__paragraph {
+  margin: 15px 0 60px 0;
+  color: $linkWaterWhite;
+
+  @include md {
+    margin: 25px 0 30px 0;
+  }
+}
+
+.banner__button {
+  margin-bottom: 80px;
+
+  @include lg {
+    margin-bottom: 100px;
+  }
+}
