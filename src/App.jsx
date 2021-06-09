@@ -3,7 +3,7 @@ import Banner from './components/Banner';
 
 import './styles/index.scss';
 
-function App() {
+const  App = () => {
   return (
     <div>
       <Banner />

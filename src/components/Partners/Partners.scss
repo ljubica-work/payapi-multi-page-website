@@ -1,4 +1,4 @@
-@import "../../styles/index.scss";
+@import "../../styles/base.scss";
 
 .partners {
   display: flex;
@@ -6,7 +6,6 @@
   box-sizing: border-box;
   justify-content: space-between;
   max-width: 280px;
-  z-index: 10;
   position: relative;
 }
 

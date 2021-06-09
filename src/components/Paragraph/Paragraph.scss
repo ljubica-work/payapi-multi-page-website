@@ -1,13 +1,9 @@
-@import "../../styles/index.scss";
+@import "../../styles/base.scss";
 
 .paragraph__text {
   @include simple-text;
-  max-width: 330px;
+  width: 100%;
   text-align: center;
-
-  @include md {
-    max-width: 455px;
-  }
 
   @include lg {
     text-align: left;
