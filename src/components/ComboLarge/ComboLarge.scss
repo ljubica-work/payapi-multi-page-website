@@ -1,6 +1,6 @@
 @import "../../styles/base.scss";
 
-.combolg {
+.combo-large {
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
@@ -9,7 +9,7 @@
   @include lg {
     max-width: 1110px;
     flex-direction: row;
-    margin: auto;
+    margin: 0 auto;
     justify-content: space-around;
 
     &--reverse {
@@ -17,7 +17,7 @@
       margin-top: -75px;
       justify-content: space-between;
 
-      .combolg__image {
+      .combo-large__image {
         margin-right: -100px;
       }
     }
@@ -30,16 +30,17 @@
   }
 }
 
-.combolg__title {
+.combo-large__title {
   color: $sanJuanBlue;
   margin-bottom: 25px;
+  text-align: center;
 }
 
-.combolg_paragraph {
+.combo-large_paragraph {
   color: $lightSJBlue;
 }
 
-.combolg__image {
+.combo-large__image {
   width: 108%;
   margin-top: 30px;
   margin-left: 40px;
@@ -54,12 +55,13 @@
   }
 }
 
-.combolg__content {
+.combo-large__content {
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 330px;
   margin: -25px auto 0;
+  padding: 0 25px;
 
   @include md {
     max-width: 575px;
