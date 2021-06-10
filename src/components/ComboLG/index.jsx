@@ -2,6 +2,7 @@ import React from 'react';
 import Title from '../Title';
 import Paragraph from '../Paragraph';
 import cx from 'classnames';
+import PropTypes from 'prop-types';
 
 import './ComboLG.scss';
 
@@ -29,6 +30,11 @@ const ComboLG = ({type, reverse}) => {
     </div>
   );
 
+}
+
+ComboLG.propTypes = {
+  type: PropTypes.string,
+  reverse: PropTypes.bool
 }
 
 export default ComboLG;
