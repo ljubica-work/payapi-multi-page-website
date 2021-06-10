@@ -1,0 +1,18 @@
+@import "../../styles/base.scss";
+
+.combo-small {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 25px;
+  justify-content: center;
+
+  @include md {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  @include lg {
+    max-width: 1110px;
+    margin: auto;
+  }
+}
