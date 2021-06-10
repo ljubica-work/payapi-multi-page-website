@@ -1,0 +1,103 @@
+@import "../../styles/base.scss";
+
+.footer {
+  margin-top: 50px;
+  background-color: $mirageBlue;
+  overflow: hidden;
+  position: relative;
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+
+  @include md {
+    height: 100px;
+    padding: 0 20px;
+  }
+}
+
+.footer__circle {
+  background-color: $sanJuanBlue;
+  position: absolute;
+  top: 190px;
+
+  @include md {
+    top: -100px;
+    right: -360px;
+  }
+}
+
+.footer__wrapper {
+  z-index: 2;
+
+  @include md {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @include lg {
+    max-width: 1110px;
+  }
+}
+
+.footer__list {
+  text-align: center;
+  font-weight: 700;
+  margin: 40px 0;
+
+  & * + * {
+    margin-top: 30px;
+  }
+
+  @include md {
+    margin: 0;
+
+    & * + * {
+      margin-left: 40px;
+    }
+  }
+}
+
+.footer__link {
+  @include simple-text(15px, 18px);
+  color: $linkWaterWhite;
+  opacity: 0.7;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.footer__icon:hover {
+  cursor: pointer;
+  path {
+    fill: $charmPink;
+  }
+}
+
+.footer__icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 120px;
+}
+
+.footer__menu {
+  @include md {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.footer__list-item {
+  @include md {
+    display: inline;
+  }
+}
+
+.footer__logo {
+  @include md {
+    margin-right: 60px;
+  }
+}
