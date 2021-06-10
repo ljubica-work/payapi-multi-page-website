@@ -1,0 +1,33 @@
+@import "../../styles/base.scss";
+
+.card {
+  text-align: center;
+  margin-top: 50px;
+  max-width: 330px;
+
+  @include md {
+    max-width: unset;
+    width: 30%;
+  }
+}
+
+.card__image {
+  width: 106px;
+  height: 106px;
+  margin-bottom: 30px;
+}
+
+.card__heading {
+  @include simple-text(18px, 25px);
+  font-weight: 700;
+  color: $sanJuanBlue;
+}
+
+.card__paragraph {
+  color: $lightSJBlue;
+  margin-top: 15px;
+
+  @include lg {
+    text-align: center;
+  }
+}

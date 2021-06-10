@@ -1,11 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import cx from 'classnames';
+
 import './Paragraph.scss';
 
-const Paragraph = ({className, text}) => {
+const Paragraph = ({className, text, alignment}) => {
+  const classes = cx({
+    'paragraph' : true,
+    [className]: true,
+    'paragraph--center' : alignment === 'center',
+    'paragraph--left' : alignment === 'left'
+  });
+  
   return(
-    <div className={`paragraph ${className}`}>
+    <div className={classes}>
       <p className='paragraph__text'>
         {text}
       </p>
@@ -14,7 +23,9 @@ const Paragraph = ({className, text}) => {
 }
 
 Paragraph.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
+  text: PropTypes.string,
+  alignment: PropTypes.string
 }
 
 

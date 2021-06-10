@@ -4,7 +4,15 @@
   @include simple-text;
   width: 100%;
   text-align: center;
+}
 
+.paragraph--center {
+  @include lg {
+    text-align: center;
+  }
+}
+
+.paragraph--left {
   @include lg {
     text-align: left;
   }
