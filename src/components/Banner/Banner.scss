@@ -19,13 +19,14 @@
   flex-direction: column;
   align-items: center;
   max-width: 330px;
+  margin: 0 auto;
 
   @include md {
     max-width: 455px;
   }
 
   @include lg {
-    margin-top: 100px;
+    margin: 100px 0 0 0;
     align-items: flex-start;
   }
 }

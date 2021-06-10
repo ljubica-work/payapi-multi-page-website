@@ -13,3 +13,9 @@ $viewport-lg: 1200px;
     @content;
   }
 }
+
+@mixin xl {
+  @media (min-width: #{$viewport-lg}) {
+    @content;
+  }
+}

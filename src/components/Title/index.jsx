@@ -6,7 +6,7 @@ import './Title.scss';
 
 const Title = ({text, className}) => {
 
-  let classes = cx(
+  const classes = cx(
     'title',
     className
   );
