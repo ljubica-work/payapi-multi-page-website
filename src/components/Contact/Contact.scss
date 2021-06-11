@@ -7,7 +7,7 @@
   @include md {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 
   @include lg {
@@ -15,6 +15,7 @@
     justify-content: space-between;
     max-width: 1110px;
     margin: 96px auto;
+    align-items: flex-start;
   }
 }
 
