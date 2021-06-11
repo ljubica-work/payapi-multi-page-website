@@ -1,22 +1,40 @@
-@import "../../styles/base.scss";
+@import '../../styles/base.scss';
 
-.button__inner {
-  width: 130px;
-  border: 1px solid $linkWaterWhite;
+.button {
   border-radius: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: $linkWaterWhite;
-}
-
-.button__inner:hover {
-  background-color: $linkWaterWhite;
-  color: $mirageBlue;
+  display: flex;
+  outline: none;
 }
 
 .button__text {
   @include simple-text(15px, 18px);
   font-weight: 700;
   margin: 15px 0;
+}
+
+.button--light {
+  width: 130px;
+  border: 1px solid $linkWaterWhite;
+  color: $linkWaterWhite;
+  background-color: transparent;
+
+  &:hover {
+    background-color: $linkWaterWhite;
+    color: $mirageBlue;
+    cursor: pointer;
+  }
+}
+
+.button--primary {
+  color: $linkWaterWhite;
+  background-color: $darkPink;
+  border: none;
+
+  &:hover {
+    background-color: $charmPink;
+    cursor: pointer;
+  }
 }
