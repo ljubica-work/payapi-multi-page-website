@@ -11,11 +11,30 @@
   }
 
   @include lg {
-    flex-direction: row;
-    justify-content: space-between;
     max-width: 1110px;
-    margin: 96px auto;
-    align-items: flex-start;
+  }
+
+  &--smaller {
+    @include lg {
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 96px auto;
+      align-items: flex-start;
+    }
+  }
+
+  &--larger {
+    @include lg {
+      max-width: 546px;
+      align-items: flex-start;
+      padding: 0;
+    }
+
+    .contact__wrapper {
+      @include lg {
+        padding-top: 30px;
+      }
+    }
   }
 }
 
@@ -72,6 +91,7 @@
 
   @include lg {
     margin-bottom: 0;
+    text-align: left;
   }
 }
 

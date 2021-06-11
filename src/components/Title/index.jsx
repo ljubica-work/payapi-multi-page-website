@@ -4,8 +4,13 @@ import cx from 'classnames';
 
 import './Title.scss';
 
-const Title = ({ text, className }) => {
-  const classes = cx('title', className);
+const Title = ({ text, className, size }) => {
+  const classes = cx({
+    title: true,
+    [className]: true,
+    'tile--smaller': size === 'smaller',
+    'title--larger': size === 'larger',
+  });
 
   return <h2 className={classes}>{text}</h2>;
 };

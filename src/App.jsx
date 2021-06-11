@@ -4,12 +4,14 @@ import ComboLarge from './components/ComboLarge';
 import ComboSmall from './components/ComboSmall';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Header from './components/Header';
 
 import './styles/index.scss';
 
 const App = () => {
   return (
     <div className='app'>
+      <Header />
       <Banner />
       <ComboLarge
         type='code'
@@ -23,7 +25,7 @@ const App = () => {
         reverse
       />
       <ComboSmall />
-      <Contact />
+      <Contact size='smaller' title='Ready to start?' />
       <Footer />
     </div>
   );

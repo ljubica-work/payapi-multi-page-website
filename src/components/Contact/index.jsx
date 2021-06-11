@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+import cx from 'classnames';
 
 import Title from '../Title';
 import Button from '../Button';
 
 import './Contact.scss';
 
-const Contact = ({ text }) => {
+const Contact = ({ text, size, title }) => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
@@ -21,9 +22,15 @@ const Contact = ({ text }) => {
     }
   };
 
+  const classes = cx({
+    contact: true,
+    'contact--smaller': size === 'smaller',
+    'contact--larger': size === 'larger',
+  });
+
   return (
-    <div className='contact'>
-      <Title text='Ready to start?' className='contact__title' />
+    <div className={classes}>
+      <Title text={title} className='contact__title' size={size} />
       <div className='contact__wrapper'>
         <div className='contact__group'>
           <input
