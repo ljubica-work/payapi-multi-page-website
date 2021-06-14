@@ -1,0 +1,62 @@
+@import '../../styles/base.scss';
+
+.menu-desktop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  width: 100%;
+
+  @include lg {
+    max-width: 1110px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+}
+
+.menu-desktop__group {
+  display: flex;
+  align-items: center;
+}
+
+.menu-desktop__link {
+  @include simple-text(15px, 18px);
+  color: $sanJuanBlue;
+  font-weight: 700;
+  opacity: 0.7;
+  margin-right: 40px;
+  padding: 5px 0;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:hover {
+    cursor: pointer;
+    opacity: 1;
+  }
+}
+
+.menu-desktop__logo {
+  margin-right: 64px;
+}
+
+.menu-desktop__button {
+  background-color: $darkPink;
+  border-radius: 24px;
+
+  .button__inner {
+    border: none;
+    width: 173px;
+
+    &:hover {
+      background-color: $charmPink;
+      color: $linkWaterWhite;
+    }
+  }
+}
+
+.menu-desktop__links {
+  display: flex;
+  flex-wrap: wrap;
+}
