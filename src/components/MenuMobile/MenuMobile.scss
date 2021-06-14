@@ -1,0 +1,73 @@
+@import '../../styles/base.scss';
+
+.mobile-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 24px;
+  height: 40px;
+  background-color: transparent;
+  position: relative;
+}
+
+.mobile-menu__button {
+  position: absolute;
+  right: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease-in-out;
+  width: 28px;
+  height: 17px;
+  z-index: 10;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.mobile-menu__burger {
+  width: 28px;
+  height: 3px;
+  background-color: $sanJuanBlue;
+  transition: all 0.5s ease-in-out;
+  pointer-events: none;
+  z-index: 11;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 28px;
+    height: 3px;
+    background-color: $sanJuanBlue;
+    transition: all 0.5s ease-in-out;
+    transform: translateY(-6px);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 28px;
+    height: 3px;
+    background-color: $sanJuanBlue;
+    transition: all 0.5s ease-in-out;
+    transform: translateY(6px);
+  }
+}
+
+.mobile-menu__button--open {
+  .mobile-menu__burger {
+    transform: translateX(-50px);
+    background-color: transparent;
+
+    &::before {
+      transform: rotate(45deg) translate(35px, -35px);
+      background-color: $linkWaterWhite;
+    }
+
+    &::after {
+      transform: rotate(-45deg) translate(35px, 35px);
+      background-color: $linkWaterWhite;
+    }
+  }
+}

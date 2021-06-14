@@ -1,0 +1,59 @@
+@import '../../styles/base.scss';
+
+.sidebar {
+  background-color: $mirageBlue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 27px;
+  height: 100vh;
+  width: 300px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 7;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+
+  &--open {
+    transform: translateX(0%);
+  }
+}
+
+.sidebar__list-item {
+  @include simple-text(20px, 23px);
+  opacity: 0.7;
+  margin-bottom: 32px;
+
+  a {
+    color: $linkWaterWhite;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.sidebar__divider {
+  width: 100%;
+  height: 1px;
+  background-color: $linkWaterWhite;
+  opacity: 0.15;
+  margin-top: 85px;
+  margin-bottom: 43px;
+}
+
+.sidebar__button {
+  background-color: $darkPink;
+  border-radius: 24px;
+
+  .button__inner {
+    border: none;
+    width: 252px;
+
+    &:hover {
+      background-color: $charmPink;
+      color: $linkWaterWhite;
+    }
+  }
+}

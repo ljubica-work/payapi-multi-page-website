@@ -5,6 +5,7 @@ import ComboSmall from './components/ComboSmall';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import MenuMobile from './components/MenuMobile';
 
 import './styles/index.scss';
 
@@ -12,6 +13,7 @@ const App = () => {
   return (
     <div className='app'>
       <Header />
+      <MenuMobile />
       <Banner />
       <ComboLarge
         type='code'
