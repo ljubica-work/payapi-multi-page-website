@@ -1,11 +1,15 @@
 @import '../../styles/base.scss';
 
 .menu-desktop {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 40px;
-  width: 100%;
+  display: none;
+
+  @include md {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    width: 100%;
+  }
 
   @include lg {
     max-width: 1110px;
