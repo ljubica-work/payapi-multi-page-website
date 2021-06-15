@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import cx from 'classnames';
 
 import Sidebar from '../Sidebar';
@@ -9,6 +9,30 @@ import './MenuMobile.scss';
 
 const MenuMobile = () => {
   const [open, setOpen] = useState(false);
+  const node = useRef();
+
+  const CloseOnClickOutside = (ref, handler) => {
+    console.log(ref.current);
+    useEffect(() => {
+      const listener = (e) => {
+        console.log(e.target.className);
+        if (
+          !ref.current ||
+          ref.current.contains(e.target) ||
+          e.target.className.includes('mobile-menu__button--open')
+        ) {
+          return;
+        }
+        handler(e);
+      };
+      document.addEventListener('mousedown', listener);
+      return () => {
+        document.addEventListener('mousedown', listener);
+      };
+    }, [ref, handler]);
+  };
+
+  CloseOnClickOutside(node, () => setOpen(false));
 
   const classes = cx({
     'mobile-menu__button': true,
@@ -31,7 +55,9 @@ const MenuMobile = () => {
       <div className={classes} onClick={handleClick}>
         <div className='mobile-menu__burger'></div>
       </div>
-      <Sidebar open={open} />
+      <div ref={node}>
+        <Sidebar open={open} />
+      </div>
     </div>
   );
 };
