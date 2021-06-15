@@ -12,8 +12,8 @@ import './styles/index.scss';
 const App = () => {
   return (
     <div className='app'>
-      <Header />
       <MenuMobile />
+      <Header />
       <Banner />
       <ComboLarge
         type='code'
