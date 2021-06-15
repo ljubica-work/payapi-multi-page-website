@@ -1,4 +1,6 @@
 import React from 'react';
+import routes from '../../constants/routes';
+
 import Partners from '../Partners';
 import Title from '../Title';
 import Paragraph from '../Paragraph';
@@ -23,7 +25,12 @@ const Banner = () => {
             text={paragraphText}
             alignment='left'
           />
-          <Button className='banner__button' text='About Us' type='light' />
+          <Button
+            className='banner__button'
+            text='About Us'
+            type='light'
+            to={routes.ABOUT}
+          />
         </div>
       </div>
     </div>

@@ -1,5 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import cx from 'classnames';
+import { Link } from 'react-router-dom';
+import routes from '../../constants/routes';
 
 import Sidebar from '../Sidebar';
 
@@ -52,7 +54,9 @@ const MenuMobile = () => {
 
   return (
     <div className='mobile-menu'>
-      <Logo />
+      <Link to={routes.HOME}>
+        <Logo />
+      </Link>
       <button ref={menuButtonRef} className={classes} onClick={handleClick}>
         <span className='mobile-menu__burger'></span>
       </button>

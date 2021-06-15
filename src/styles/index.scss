@@ -1,11 +1,5 @@
 @import 'reset.scss';
 @import 'typography.scss';
-@import '_variables.scss';
-
-.app {
-  background-color: $backgroundGrey;
-  overflow-x: hidden;
-}
 
 .no-sroll {
   overflow: hidden;

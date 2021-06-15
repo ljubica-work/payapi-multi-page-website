@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import routes from '../../constants/routes';
 
 import Circle from '../Circle';
 
@@ -15,22 +17,24 @@ const Footer = () => {
       <Circle className='footer__circle' />
       <div className='footer__wrapper'>
         <div className='footer__menu'>
-          <Logo className='footer__logo' />
+          <Link to={routes.HOME}>
+            <Logo className='footer__logo' />
+          </Link>
           <ul className='footer__list'>
             <li className='footer__list-item'>
-              <a href='https://www.google.com/' className='footer__link'>
+              <Link to={routes.PRICING} className='footer__link'>
                 Pricing
-              </a>
+              </Link>
             </li>
             <li className='footer__list-item'>
-              <a href='https://www.google.com/' className='footer__link'>
+              <Link to={routes.ABOUT} className='footer__link'>
                 About
-              </a>
+              </Link>
             </li>
             <li className='footer__list-item'>
-              <a href='https://www.google.com/' className='footer__link'>
+              <Link to={routes.CONTACT} className='footer__link'>
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
