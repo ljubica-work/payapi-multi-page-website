@@ -8,6 +8,10 @@
   height: 40px;
   background-color: transparent;
   position: relative;
+
+  @include md {
+    display: none;
+  }
 }
 
 .mobile-menu__button {
