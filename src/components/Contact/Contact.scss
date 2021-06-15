@@ -1,0 +1,118 @@
+@import '../../styles/base.scss';
+
+.contact {
+  margin: 80px 0;
+  padding: 0 24px;
+
+  @include md {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @include lg {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1110px;
+    margin: 96px auto;
+    align-items: flex-start;
+  }
+}
+
+.contact__group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include md {
+    background-color: $linkWaterWhite;
+    display: inline-flex;
+    flex-direction: row;
+    border-radius: 24px;
+    width: 445px;
+    box-shadow: 10px 10px 25px -10px rgba(54, 83, 107, 0.25);
+  }
+}
+
+.contact__input {
+  width: 100%;
+  max-width: 327px;
+  border-radius: 24px;
+  border: none;
+  outline: none;
+  box-shadow: 10px 10px 25px -10px rgba(54, 83, 107, 0.25);
+  background-color: $linkWaterWhite;
+  color: $sanJuanBlue;
+  padding: 15px 25px;
+  @include simple-text(15px, 18px);
+  font-weight: 700;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+
+  &::placeholder {
+    opacity: 0.5;
+  }
+
+  @include md {
+    margin-bottom: 0;
+    width: calc(100% - 173px);
+    box-shadow: none;
+  }
+}
+
+.contact__title {
+  color: $sanJuanBlue;
+  margin-bottom: 32px;
+  text-align: center;
+
+  @include md {
+    margin-bottom: 40px;
+  }
+
+  @include lg {
+    margin-bottom: 0;
+  }
+}
+
+.contact__button {
+  width: 100%;
+  max-width: 325px;
+
+  @include md {
+    width: 173px;
+  }
+}
+
+.contact__message {
+  @include simple-text(15px, 18px);
+  margin-top: 15px;
+
+  @include lg {
+    margin-left: 25px;
+  }
+}
+
+.contact__message--error {
+  color: $darkPink;
+}
+
+.contact__message--gray {
+  color: $lightSJBlue;
+}
+
+.contact__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include lg {
+    align-items: flex-start;
+    margin-top: 10px;
+  }
+}
+
+.contact__link {
+  font-weight: 700;
+  color: $lightSJBlue;
+}

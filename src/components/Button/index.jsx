@@ -1,21 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 
 import './Button.scss';
 
-const Button = ({text, className}) => {
+const Button = ({ text, className, type, action }) => {
+  const classes = cx({
+    button: true,
+    [className]: true,
+    'button--primary': type === 'primary',
+    'button--light': type === 'light',
+  });
+
   return (
-    <a href='https://www.google.com/' className={`button ${className}`}>
-      <div className='button__inner'>
-        <span className='button__text'>{text}</span>
-      </div>
-    </a>
+    <button className={classes} onClick={action}>
+      <span className='button__text'>{text}</span>
+    </button>
   );
-}
+};
 
 Button.propTypes = {
   text: PropTypes.string,
-  className: PropTypes.string
-}
+  className: PropTypes.string,
+};
 
 export default Button;

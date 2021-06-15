@@ -5,28 +5,25 @@ import cx from 'classnames';
 
 import './Paragraph.scss';
 
-const Paragraph = ({className, text, alignment}) => {
+const Paragraph = ({ className, text, alignment }) => {
   const classes = cx({
-    'paragraph' : true,
+    paragraph: true,
     [className]: true,
-    'paragraph--center' : alignment === 'center',
-    'paragraph--left' : alignment === 'left'
+    'paragraph--center': alignment === 'center',
+    'paragraph--left': alignment === 'left',
   });
-  
-  return(
+
+  return (
     <div className={classes}>
-      <p className='paragraph__text'>
-        {text}
-      </p>
+      <p className='paragraph__text'>{text}</p>
     </div>
   );
-}
+};
 
 Paragraph.propTypes = {
   className: PropTypes.string,
   text: PropTypes.string,
-  alignment: PropTypes.string
-}
-
+  alignment: PropTypes.string,
+};
 
 export default Paragraph;
