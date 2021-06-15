@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
 import Sidebar from '../Sidebar';
 
@@ -9,6 +10,8 @@ import './MenuMobile.scss';
 
 const MenuMobile = () => {
   const [open, setOpen] = useState(false);
+
+  open ? disableBodyScroll(document) : enableBodyScroll(document);
 
   const classes = cx({
     'mobile-menu__button': true,
