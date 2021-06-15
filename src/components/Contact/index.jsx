@@ -37,7 +37,10 @@ const Contact = ({ text, size, title }) => {
             type='text'
             className='contact__input'
             placeholder='Enter email adress'
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => {
+              setEmail(e.target.value);
+              setMessage('');
+            }}
             value={email}
           />
           <Button
