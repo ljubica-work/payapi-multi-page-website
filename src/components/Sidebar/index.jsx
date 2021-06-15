@@ -9,7 +9,7 @@ import './Sidebar.scss';
 const Sidebar = ({ open }) => {
   const classes = cx({
     sidebar: true,
-    'sidebar--open': open === true,
+    'sidebar--open': open,
   });
   return (
     <div className={classes}>
