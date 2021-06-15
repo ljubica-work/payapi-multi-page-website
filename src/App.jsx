@@ -8,12 +8,6 @@ import Footer from './components/Footer';
 import './styles/index.scss';
 
 const App = () => {
-  // const contactText = [
-  //   'Have any questions? ',
-  //   <a href='https://www.google.com/' className='contact__link'>
-  //     Contact Us
-  //   </a>,
-  // ];
   return (
     <div className='app'>
       <Banner />
