@@ -106,7 +106,7 @@
 
 .contact__message {
   @include simple-text(15px, 18px);
-  margin-top: 15px;
+  position: absolute;
 
   @include lg {
     margin-left: 25px;
@@ -115,16 +115,19 @@
 
 .contact__message--error {
   color: $darkPink;
+  bottom: -25px;
 }
 
 .contact__message--gray {
   color: $lightSJBlue;
+  bottom: -45px;
 }
 
 .contact__wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 
   @include lg {
     align-items: flex-start;
