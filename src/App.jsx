@@ -6,6 +6,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import MenuMobile from './components/MenuMobile';
+import MenuDesktop from './components/MenuDesktop';
 
 import './styles/index.scss';
 
@@ -13,6 +14,7 @@ const App = () => {
   return (
     <div className='app'>
       <MenuMobile />
+      <MenuDesktop />
       <Header />
       <Banner />
       <ComboLarge
