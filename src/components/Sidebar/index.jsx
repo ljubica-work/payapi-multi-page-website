@@ -25,7 +25,11 @@ const Sidebar = ({ open }) => {
           <a href='https://www.google.com/'>Contact</a>
         </li>
       </ul>
-      <Button text='Schedule a Demo' className='sidebar__button' />
+      <Button
+        text='Schedule a Demo'
+        className='sidebar__button'
+        type='primary'
+      />
     </div>
   );
 };

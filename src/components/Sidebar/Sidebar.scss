@@ -44,16 +44,5 @@
 }
 
 .sidebar__button {
-  background-color: $darkPink;
-  border-radius: 24px;
-
-  .button__inner {
-    border: none;
-    width: 252px;
-
-    &:hover {
-      background-color: $charmPink;
-      color: $linkWaterWhite;
-    }
-  }
+  width: 252px;
 }
