@@ -6,4 +6,10 @@
   @include md {
     @include title-h2;
   }
+
+  &--larger {
+    @include lg {
+      @include title-h2(72px, 72px);
+    }
+  }
 }
