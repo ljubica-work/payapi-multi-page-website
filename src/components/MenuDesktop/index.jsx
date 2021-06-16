@@ -24,7 +24,11 @@ const MenuDesktop = () => {
         </div>
       </div>
 
-      <Button text='Schedule a Demo' className='menu-desktop__button' />
+      <Button
+        text='Schedule a Demo'
+        className='menu-desktop__button'
+        type='primary'
+      />
     </div>
   );
 };
