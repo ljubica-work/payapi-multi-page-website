@@ -19,6 +19,7 @@ const MenuMobile = () => {
     setOpen(!open);
     if (!open) {
       document.body.classList.add('no-sroll');
+      window.scrollTo(0, 0);
     } else {
       document.body.classList.remove('no-sroll');
     }
