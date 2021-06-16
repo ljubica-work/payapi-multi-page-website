@@ -28,6 +28,11 @@ const Contact = ({ text, size, title }) => {
     'contact--larger': size === 'larger',
   });
 
+  const handleOnChange = (e) => {
+    setEmail(e.target.value);
+    setMessage('');
+  };
+
   return (
     <div className={classes}>
       <Title text={title} className='contact__title' size={size} />
@@ -38,8 +43,7 @@ const Contact = ({ text, size, title }) => {
             className='contact__input'
             placeholder='Enter email adress'
             onChange={(e) => {
-              setEmail(e.target.value);
-              setMessage('');
+              handleOnChange(e);
             }}
             value={email}
           />
