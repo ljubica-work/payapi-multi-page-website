@@ -47,11 +47,11 @@
   margin-right: 64px;
 }
 
-.menu-desktop__button {
-  width: 173px;
-}
-
 .menu-desktop__links {
   display: flex;
   flex-wrap: wrap;
+}
+
+.menu-desktop__button {
+  flex-shrink: 0;
 }

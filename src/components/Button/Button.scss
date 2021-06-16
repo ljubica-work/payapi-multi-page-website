@@ -7,16 +7,16 @@
   justify-content: center;
   display: flex;
   outline: none;
+  min-width: 130px;
+  padding: 15px 26px;
 }
 
 .button__text {
   @include simple-text(15px, 18px);
   font-weight: 700;
-  margin: 15px 0;
 }
 
 .button--light {
-  width: 130px;
   border: 1px solid $linkWaterWhite;
   color: $linkWaterWhite;
   background-color: transparent;
