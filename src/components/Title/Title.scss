@@ -12,4 +12,10 @@
       @include title-h2(72px, 72px);
     }
   }
+
+  &--smaller {
+    @include lg {
+      @include title-h2(56px, 56px);
+    }
+  }
 }
