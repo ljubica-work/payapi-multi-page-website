@@ -53,13 +53,13 @@ const MenuMobile = () => {
   return (
     <div className='mobile-menu'>
       <Logo />
-      <div
+      <button
         ref={menuButtonRef}
         className={classes}
         onClick={() => setOpen(!open)}
       >
-        <div className='mobile-menu__burger'></div>
-      </div>
+        <span className='mobile-menu__burger'></span>
+      </button>
       <div ref={sidebarRef}>
         <Sidebar open={open} />
       </div>

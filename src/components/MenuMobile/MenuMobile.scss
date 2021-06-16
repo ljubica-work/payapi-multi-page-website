@@ -24,6 +24,10 @@
   width: 28px;
   height: 17px;
   z-index: 10;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
 
   &:hover {
     cursor: pointer;
@@ -46,6 +50,7 @@
     background-color: $sanJuanBlue;
     transition: all 0.5s ease-in-out;
     transform: translateY(-6px);
+    display: block;
   }
 
   &::after {
@@ -56,6 +61,7 @@
     background-color: $sanJuanBlue;
     transition: all 0.5s ease-in-out;
     transform: translateY(6px);
+    display: block;
   }
 }
 
