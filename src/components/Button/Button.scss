@@ -39,3 +39,15 @@
     cursor: pointer;
   }
 }
+
+.button--dark {
+  color: $sanJuanBlue;
+  border: 1px solid $sanJuanBlue;
+  background-color: transparent;
+
+  &:hover {
+    background-color: $sanJuanBlue;
+    color: $linkWaterWhite;
+    cursor: pointer;
+  }
+}

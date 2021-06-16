@@ -1,0 +1,102 @@
+@import '../../styles/base.scss';
+
+.offer-column__title {
+  @include title-h2(24px, 32px);
+  color: $darkPink;
+  margin-bottom: 81px;
+  white-space: nowrap;
+  text-align: center;
+
+  @include md {
+    @include title-h2(24px, 40px);
+    margin-bottom: 0;
+  }
+
+  @include lg {
+    @include title-h2(32px, 40px);
+    width: 100%;
+    text-align: left;
+  }
+}
+
+.offer-column__price {
+  @include title-h2(56px, 72px);
+  color: $sanJuanBlue;
+
+  @include md {
+    @include title-h2(48px, 72px);
+  }
+
+  @include lg {
+    @include title-h2(56px, 72px);
+  }
+}
+
+.offer-column__paragraph {
+  color: $lightSJBlue;
+  display: none;
+
+  @include md {
+    display: block;
+    margin: 13px 0 19px;
+  }
+
+  @include lg {
+    margin: 16px 0 8px;
+  }
+}
+
+.offer-column__divider {
+  height: 1px;
+  width: 100%;
+  background-color: $sanJuanBlue;
+  opacity: 0.25;
+  margin: 24px 0;
+}
+
+.offer-column__list-item {
+  @include simple-text;
+  color: $sanJuanBlue;
+  margin-bottom: 8px;
+  text-transform: capitalize;
+  opacity: 0.5;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 24px;
+  }
+}
+
+.offer-column__list-item--checked {
+  opacity: 1;
+  &::before {
+    background-image: url('../../assets/svg/check-mark.svg');
+  }
+}
+
+.offer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.offer-column__button {
+  width: 168px;
+}
+
+.offer-column__content-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+
+  @include lg {
+    align-items: flex-start;
+  }
+}
