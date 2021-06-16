@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import { Link } from 'react-router-dom';
 
 import './Button.scss';
 
-const Button = ({ text, className, type, action }) => {
+const Button = ({ text, className, type, action, href, to }) => {
+  const Component = href ? 'a' : to ? Link : 'button';
   const classes = cx({
     button: true,
     [className]: true,
@@ -13,9 +15,9 @@ const Button = ({ text, className, type, action }) => {
   });
 
   return (
-    <button className={classes} onClick={action}>
+    <Component className={classes} onClick={action}>
       <span className='button__text'>{text}</span>
-    </button>
+    </Component>
   );
 };
 
