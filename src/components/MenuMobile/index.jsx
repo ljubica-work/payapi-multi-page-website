@@ -15,10 +15,20 @@ const MenuMobile = () => {
     'mobile-menu__button--open': open,
   });
 
+  const handleClick = () => {
+    setOpen(!open);
+    if (!open) {
+      document.body.classList.add('no-sroll');
+      window.scrollTo(0, 0);
+    } else {
+      document.body.classList.remove('no-sroll');
+    }
+  };
+
   return (
     <div className='mobile-menu'>
       <Logo />
-      <div className={classes} onClick={() => setOpen(!open)}>
+      <div className={classes} onClick={handleClick}>
         <div className='mobile-menu__burger'></div>
       </div>
       <Sidebar open={open} />
