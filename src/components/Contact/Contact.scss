@@ -98,9 +98,10 @@
 .contact__button {
   width: 100%;
   max-width: 325px;
+  flex-shrink: 0;
 
   @include md {
-    width: 173px;
+    width: auto;
   }
 }
 
