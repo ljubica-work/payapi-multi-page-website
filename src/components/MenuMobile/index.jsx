@@ -13,7 +13,7 @@ const MenuMobile = () => {
   const sidebarRef = useRef();
   const menuButtonRef = useRef();
 
-  const handleClick = useCallback(
+  const handleCBodylick = useCallback(
     (e) => {
       if (
         sidebarRef.current.contains(e.target) ||
@@ -29,11 +29,11 @@ const MenuMobile = () => {
   );
 
   useEffect(() => {
-    document.addEventListener('mousedown', handleClick);
+    document.addEventListener('mousedown', handleCBodylick);
     return () => {
-      document.removeEventListener('mousedown', handleClick);
+      document.removeEventListener('mousedown', handleCBodylick);
     };
-  }, [handleClick]);
+  }, [handleCBodylick]);
 
   const classes = cx({
     'mobile-menu__button': true,
@@ -53,11 +53,7 @@ const MenuMobile = () => {
   return (
     <div className='mobile-menu'>
       <Logo />
-      <button
-        ref={menuButtonRef}
-        className={classes}
-        onClick={() => setOpen(!open)}
-      >
+      <button ref={menuButtonRef} className={classes} onClick={handleClick}>
         <span className='mobile-menu__burger'></span>
       </button>
       <div ref={sidebarRef}>
