@@ -5,8 +5,7 @@ import { Link } from 'react-router-dom';
 
 import './Button.scss';
 
-const Button = ({ text, className, type, action, href, to }) => {
-  const Component = href ? 'a' : to ? Link : 'button';
+const Button = ({ text, className, type, onclick, href, to }) => {
   const classes = cx({
     button: true,
     [className]: true,
@@ -14,16 +13,34 @@ const Button = ({ text, className, type, action, href, to }) => {
     'button--light': type === 'light',
   });
 
-  return (
-    <Component className={classes} onClick={action}>
-      <span className='button__text'>{text}</span>
-    </Component>
-  );
+  if (href) {
+    return (
+      <a className={classes} href={href}>
+        <span className='button__text'>{text}</span>
+      </a>
+    );
+  } else if (to) {
+    return (
+      <Link className={classes} to={to}>
+        <span className='button__text'>{text}</span>
+      </Link>
+    );
+  } else {
+    return (
+      <button className={classes} onClick={onclick}>
+        <span className='button__text'>{text}</span>
+      </button>
+    );
+  }
 };
 
 Button.propTypes = {
   text: PropTypes.string,
   className: PropTypes.string,
+  type: PropTypes.string,
+  onclick: PropTypes.func,
+  href: PropTypes.string,
+  to: PropTypes.string,
 };
 
 export default Button;

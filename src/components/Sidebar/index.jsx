@@ -29,6 +29,7 @@ const Sidebar = ({ open }) => {
         text='Schedule a Demo'
         className='sidebar__button'
         type='primary'
+        href='https://www.google.com/'
       />
     </div>
   );
