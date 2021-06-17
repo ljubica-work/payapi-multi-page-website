@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import routes from '../../constants/routes';
 
 import Button from '../Button';
 
@@ -10,17 +12,19 @@ const MenuDesktop = () => {
   return (
     <div className='menu-desktop'>
       <div className='menu-desktop__group'>
-        <Logo className='menu-desktop__logo' />
+        <Link to={routes.HOME}>
+          <Logo className='menu-desktop__logo' />
+        </Link>
         <div className='menu-desktop__links'>
-          <a href='https://www.google.com/' className='menu-desktop__link'>
+          <Link to={routes.PRICING} className='menu-desktop__link'>
             Pricing
-          </a>
-          <a href='https://www.google.com/' className='menu-desktop__link'>
+          </Link>
+          <Link to={routes.ABOUT} className='menu-desktop__link'>
             About
-          </a>
-          <a href='https://www.google.com/' className='menu-desktop__link'>
+          </Link>
+          <Link to={routes.CONTACT} className='menu-desktop__link'>
             Contact
-          </a>
+          </Link>
         </div>
       </div>
 
@@ -28,6 +32,7 @@ const MenuDesktop = () => {
         text='Schedule a Demo'
         className='menu-desktop__button'
         type='primary'
+        to={routes.CONTACT}
       />
     </div>
   );

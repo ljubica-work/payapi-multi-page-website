@@ -1,37 +1,30 @@
 import React from 'react';
-import Banner from './components/Banner';
-import ComboLarge from './components/ComboLarge';
-import ComboSmall from './components/ComboSmall';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import Header from './components/Header';
-import MenuMobile from './components/MenuMobile';
-import MenuDesktop from './components/MenuDesktop';
+import { Switch, Route } from 'react-router-dom';
+import routes from './constants/routes';
+
+import Home from './pages/Home';
+import Pricing from './pages/Pricing';
+import ContactPage from './pages/ContactPage';
+import About from './pages/About';
 
 import './styles/index.scss';
 
 const App = () => {
   return (
-    <div className='app'>
-      <MenuMobile />
-      <MenuDesktop />
-      <Header />
-      <Banner />
-      <ComboLarge
-        type='code'
-        title='Easy to implement'
-        text='Our API comes with just a few lines of code. You’ll be up and running in no time. We built our documentation page to integrate payments functionality with ease.'
-      />
-      <ComboLarge
-        type='iphone'
-        title='Simple UI & UX'
-        text='Our pre-built form is easy to integrate in your app or website’s checkout flow and designed to optimize conversion.'
-        reverse
-      />
-      <ComboSmall />
-      <Contact size='smaller' title='Ready to start?' />
-      <Footer />
-    </div>
+    <Switch>
+      <Route exact path={routes.HOME}>
+        <Home />
+      </Route>
+      <Route path={routes.ABOUT}>
+        <About />
+      </Route>
+      <Route path={routes.PRICING}>
+        <Pricing />
+      </Route>
+      <Route path={routes.CONTACT}>
+        <ContactPage />
+      </Route>
+    </Switch>
   );
 };
 

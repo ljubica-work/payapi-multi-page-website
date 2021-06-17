@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import { Link } from 'react-router-dom';
+import routes from '../../constants/routes';
 
 import Button from '../Button';
 
@@ -16,20 +18,20 @@ const Sidebar = ({ open }) => {
       <div className='sidebar__divider'></div>
       <ul>
         <li className='sidebar__list-item'>
-          <a href='https://www.google.com/'>Pricing</a>
+          <Link to={routes.PRICING}>Pricing</Link>
         </li>
         <li className='sidebar__list-item'>
-          <a href='https://www.google.com/'>About</a>
+          <Link to={routes.ABOUT}>About</Link>
         </li>
         <li className='sidebar__list-item'>
-          <a href='https://www.google.com/'>Contact</a>
+          <Link to={routes.CONTACT}>Contact</Link>
         </li>
       </ul>
       <Button
         text='Schedule a Demo'
         className='sidebar__button'
         type='primary'
-        href='https://www.google.com/'
+        to={routes.CONTACT}
       />
     </div>
   );
