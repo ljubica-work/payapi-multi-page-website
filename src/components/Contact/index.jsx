@@ -51,7 +51,7 @@ const Contact = ({ text, size, title }) => {
             text='Schedule a Demo'
             className='contact__button'
             type='primary'
-            action={isValid}
+            onclick={isValid}
           />
         </div>
         <span className='contact__message contact__message--error'>
