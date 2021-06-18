@@ -15,33 +15,6 @@ const MenuMobile = () => {
   const sidebarRef = useRef();
   const menuButtonRef = useRef();
 
-  const handleCBodylick = useCallback(
-    (e) => {
-      if (
-        sidebarRef.current.contains(e.target) ||
-        menuButtonRef.current === e.target
-      ) {
-        return;
-      }
-      if (open) {
-        setOpen(false);
-      }
-    },
-    [open],
-  );
-
-  useEffect(() => {
-    document.addEventListener('mousedown', handleCBodylick);
-    return () => {
-      document.removeEventListener('mousedown', handleCBodylick);
-    };
-  }, [handleCBodylick]);
-
-  const classes = cx({
-    'mobile-menu__button': true,
-    'mobile-menu__button--open': open,
-  });
-
   const handleClick = () => {
     setOpen(!open);
     if (!open) {
@@ -51,6 +24,34 @@ const MenuMobile = () => {
       document.body.classList.remove('no-sroll');
     }
   };
+
+  const handleOutsideClick = useCallback(
+    (e) => {
+      if (
+        sidebarRef.current.contains(e.target) ||
+        menuButtonRef.current === e.target
+      ) {
+        return;
+      }
+      if (open) {
+        setOpen(false);
+        document.body.classList.remove('no-sroll');
+      }
+    },
+    [open],
+  );
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleOutsideClick);
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick);
+    };
+  }, [handleOutsideClick]);
+
+  const classes = cx({
+    'mobile-menu__button': true,
+    'mobile-menu__button--open': open,
+  });
 
   return (
     <div className='mobile-menu'>
