@@ -20,7 +20,7 @@ const info = [
 const Infographic = () => {
   const renderNumberCards = () => {
     return info.map((item) => (
-      <div className='infographic__card'>
+      <div className='infographic__card' key={item.number}>
         <div className='infographic__divider'></div>
         <h4 className='infographic__title'>{item.title}</h4>
         <div className='infographic__number'>{item.number}</div>
