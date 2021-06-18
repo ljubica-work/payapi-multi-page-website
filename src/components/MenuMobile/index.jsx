@@ -15,15 +15,14 @@ const MenuMobile = () => {
   const sidebarRef = useRef();
   const menuButtonRef = useRef();
 
-  const handleClick = () => {
-    setOpen(!open);
-    if (!open) {
+  useEffect(() => {
+    if (open) {
       document.body.classList.add('no-sroll');
       window.scrollTo(0, 0);
     } else {
       document.body.classList.remove('no-sroll');
     }
-  };
+  }, [open]);
 
   const handleOutsideClick = useCallback(
     (e) => {
@@ -58,11 +57,15 @@ const MenuMobile = () => {
       <Link to={routes.HOME}>
         <Logo />
       </Link>
-      <button ref={menuButtonRef} className={classes} onClick={handleClick}>
+      <button
+        ref={menuButtonRef}
+        className={classes}
+        onClick={() => setOpen(!open)}
+      >
         <span className='mobile-menu__burger'></span>
       </button>
       <div ref={sidebarRef}>
-        <Sidebar open={open} />
+        <Sidebar open={open} setOpen={setOpen} />
       </div>
     </div>
   );

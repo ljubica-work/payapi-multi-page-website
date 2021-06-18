@@ -16,13 +16,13 @@ const Button = ({ text, className, type, onclick, href, to }) => {
 
   if (href) {
     return (
-      <a className={classes} href={href}>
+      <a className={classes} href={href} onclick={onclick}>
         <span className='button__text'>{text}</span>
       </a>
     );
   } else if (to) {
     return (
-      <Link className={classes} to={to}>
+      <Link className={classes} to={to} onClick={onclick}>
         <span className='button__text'>{text}</span>
       </Link>
     );
