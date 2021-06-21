@@ -1,0 +1,53 @@
+@import '../../styles/base.scss';
+
+.pricing {
+  padding: 0 24px;
+  margin-top: 20px;
+
+  @include md {
+    padding: 0 40px;
+  }
+
+  @include lg {
+    padding: 0 165px;
+  }
+}
+
+.pricing--inner {
+  @include lg {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+}
+
+.pricing__title {
+  color: $sanJuanBlue;
+  text-align: center;
+
+  @include lg {
+    text-align: left;
+  }
+}
+
+.pricing__offer-column {
+  margin-top: 48px;
+
+  @include md {
+    margin-top: 69px;
+    margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  @include lg {
+    margin-right: 30px;
+  }
+}
+
+.pricing__offer-columns {
+  @include md {
+    display: flex;
+  }
+}

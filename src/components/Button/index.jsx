@@ -11,6 +11,7 @@ const Button = ({ text, className, type, onclick, href, to }) => {
     [className]: true,
     'button--primary': type === 'primary',
     'button--light': type === 'light',
+    'button--dark': type === 'dark',
   });
 
   if (href) {
