@@ -1,30 +1,15 @@
 import React from 'react';
 
-import './Infographic.scss';
+import infographicData from './data';
 
-const info = [
-  {
-    title: 'Team members',
-    number: '300+',
-  },
-  {
-    title: 'Offices in the US',
-    number: '3',
-  },
-  {
-    title: 'Transactions analyzed',
-    number: '10M+',
-  },
-];
+import './Infographic.scss';
 
 const Infographic = () => {
   const renderNumberCards = () => {
-    return info.map((item) => (
+    return infographicData.map((item) => (
       <div className='infographic__card' key={item.number}>
-        <div className='infographic__divider'></div>
         <h4 className='infographic__title'>{item.title}</h4>
         <div className='infographic__number'>{item.number}</div>
-        <div className='infographic__divider'></div>
       </div>
     ));
   };

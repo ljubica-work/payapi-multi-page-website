@@ -2,10 +2,14 @@
 
 .infographic {
   text-align: center;
+  border-top: 1px solid rgba($sanJuanBlue, 0.25);
+  border-bottom: 1px solid rgba($sanJuanBlue, 0.25);
+  padding: 16px 0;
 
   @include md {
     display: flex;
     justify-content: space-between;
+    border: none;
   }
 
   @include lg {
@@ -33,37 +37,6 @@
   }
 }
 
-.infographic__divider {
-  width: 100%;
-  height: 1px;
-  background-color: $sanJuanBlue;
-  opacity: 0.25;
-  display: none;
-  @include md {
-    display: block;
-  }
-}
-
-.infographic__card:first-child {
-  .infographic__divider:first-child {
-    display: block;
-    margin-bottom: 16px;
-    @include md {
-      margin-bottom: 0;
-    }
-  }
-}
-
-.infographic__card:last-child {
-  .infographic__divider:last-child {
-    display: block;
-    margin-top: 16px;
-    @include md {
-      margin-top: 0;
-    }
-  }
-}
-
 .infographic__card {
   margin-bottom: 32px;
   margin-right: 10px;
@@ -71,6 +44,8 @@
 
   @include md {
     margin-bottom: 0;
+    border-top: 1px solid rgba($sanJuanBlue, 0.25);
+    border-bottom: 1px solid rgba($sanJuanBlue, 0.25);
   }
 
   @include lg {
