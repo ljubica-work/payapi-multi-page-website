@@ -15,7 +15,16 @@ const MenuMobile = () => {
   const sidebarRef = useRef();
   const menuButtonRef = useRef();
 
-  const handleCBodylick = useCallback(
+  useEffect(() => {
+    if (open) {
+      document.body.classList.add('no-sroll');
+      window.scrollTo(0, 0);
+    } else {
+      document.body.classList.remove('no-sroll');
+    }
+  }, [open]);
+
+  const handleOutsideClick = useCallback(
     (e) => {
       if (
         sidebarRef.current.contains(e.target) ||
@@ -25,43 +34,38 @@ const MenuMobile = () => {
       }
       if (open) {
         setOpen(false);
+        document.body.classList.remove('no-sroll');
       }
     },
     [open],
   );
 
   useEffect(() => {
-    document.addEventListener('mousedown', handleCBodylick);
+    document.addEventListener('mousedown', handleOutsideClick);
     return () => {
-      document.removeEventListener('mousedown', handleCBodylick);
+      document.removeEventListener('mousedown', handleOutsideClick);
     };
-  }, [handleCBodylick]);
+  }, [handleOutsideClick]);
 
   const classes = cx({
     'mobile-menu__button': true,
     'mobile-menu__button--open': open,
   });
 
-  const handleClick = () => {
-    setOpen(!open);
-    if (!open) {
-      document.body.classList.add('no-sroll');
-      window.scrollTo(0, 0);
-    } else {
-      document.body.classList.remove('no-sroll');
-    }
-  };
-
   return (
     <div className='mobile-menu'>
       <Link to={routes.HOME}>
         <Logo />
       </Link>
-      <button ref={menuButtonRef} className={classes} onClick={handleClick}>
+      <button
+        ref={menuButtonRef}
+        className={classes}
+        onClick={() => setOpen(!open)}
+      >
         <span className='mobile-menu__burger'></span>
       </button>
       <div ref={sidebarRef}>
-        <Sidebar open={open} />
+        <Sidebar open={open} setOpen={setOpen} />
       </div>
     </div>
   );
