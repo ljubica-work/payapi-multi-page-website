@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
+import PropTypes from 'prop-types';
 
 import Title from '../Title';
 import Button from '../Button';
@@ -63,6 +64,12 @@ const Contact = ({ text, size, title }) => {
       </div>
     </div>
   );
+};
+
+Contact.propTypes = {
+  text: PropTypes.array,
+  size: PropTypes.string,
+  title: PropTypes.string,
 };
 
 export default Contact;

@@ -37,6 +37,8 @@ const ComboLarge = ({ type, reverse, title, text }) => {
 ComboLarge.propTypes = {
   type: PropTypes.string,
   reverse: PropTypes.bool,
+  title: PropTypes.string,
+  text: PropTypes.string,
 };
 
 export default ComboLarge;
