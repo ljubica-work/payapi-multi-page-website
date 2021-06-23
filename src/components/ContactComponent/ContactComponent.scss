@@ -12,6 +12,7 @@
 
   @include lg {
     max-width: 1110px;
+    padding: 0;
   }
 
   &--smaller {
@@ -70,6 +71,10 @@
   box-sizing: border-box;
 
   &::placeholder {
+    opacity: 0.5;
+  }
+
+  &--disabled {
     opacity: 0.5;
   }
 

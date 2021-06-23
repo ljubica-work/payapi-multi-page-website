@@ -25,7 +25,9 @@
   },
   "eslintConfig": {
     "rules": {
-      "react/prop-types": ["warn"]
+      "react/prop-types": [
+        "warn"
+      ]
     },
     "extends": [
       "react-app",

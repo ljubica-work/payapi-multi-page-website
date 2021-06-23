@@ -1,28 +1,28 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
+import formValidation from '../../helpers/formValidation';
 
 import Title from '../Title';
 import Button from '../Button';
 
-import './Contact.scss';
+import './ContactComponent.scss';
 
-const TIMEOUT_DURATION = 4000;
+const POPUP_DURATION = 4000;
+const LOADER_DURATION = 2000;
 
 const Contact = ({ text, size, title, setIsPopupVisible }) => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const isValid = () => {
-    let pattern = new RegExp(
-      /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i,
-    );
-    if (!pattern.test(email)) {
-      setMessage('Please enter a valid email address.');
+    if (formValidation('email', email)) {
+      setMessage(formValidation('email', email));
+      return false;
     } else {
       setMessage('');
-      setEmail('');
-      showPopup();
+      return true;
     }
   };
 
@@ -30,7 +30,27 @@ const Contact = ({ text, size, title, setIsPopupVisible }) => {
     setIsPopupVisible(true);
     setTimeout(() => {
       setIsPopupVisible(false);
-    }, TIMEOUT_DURATION);
+    }, POPUP_DURATION);
+  };
+
+  const load = () => {
+    setIsLoading(true);
+    setTimeout(function () {
+      setIsLoading(false);
+      setEmail('');
+      showPopup();
+    }, LOADER_DURATION);
+  };
+
+  const handleClick = () => {
+    if (isValid()) {
+      load();
+    }
+  };
+
+  const handleOnChange = (e) => {
+    setEmail(e.target.value);
+    setMessage('');
   };
 
   const classes = cx({
@@ -39,10 +59,10 @@ const Contact = ({ text, size, title, setIsPopupVisible }) => {
     'contact--larger': size === 'larger',
   });
 
-  const handleOnChange = (e) => {
-    setEmail(e.target.value);
-    setMessage('');
-  };
+  const inputClasses = cx({
+    contact__input: true,
+    'contact__input--disabled': isLoading,
+  });
 
   return (
     <div className={classes}>
@@ -51,18 +71,20 @@ const Contact = ({ text, size, title, setIsPopupVisible }) => {
         <div className='contact__group'>
           <input
             type='text'
-            className='contact__input'
+            className={inputClasses}
             placeholder='Enter email adress'
             onChange={(e) => {
               handleOnChange(e);
             }}
             value={email}
+            disabled={isLoading}
           />
           <Button
             text='Schedule a Demo'
             className='contact__button'
             type='primary'
-            onclick={isValid}
+            onclick={handleClick}
+            isLoading={isLoading}
           />
         </div>
         <span className='contact__message contact__message--error'>

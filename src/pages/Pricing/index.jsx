@@ -5,7 +5,7 @@ import pricingData from './data';
 import Layout from '../../components/Layout';
 import OfferColumn from '../../components/OfferColumn';
 import Title from '../../components/Title';
-import Contact from '../../components/Contact';
+import ContactComponent from '../../components/ContactComponent';
 
 import './Pricing.scss';
 
@@ -27,7 +27,7 @@ const Pricing = () => {
           <div className='pricing__offer-columns'>{renderOfferColumns()}</div>
         </div>
       </div>
-      <Contact size='smaller' title='Ready to start?' />
+      <ContactComponent size='smaller' title='Ready to start?' />
     </Layout>
   );
 };

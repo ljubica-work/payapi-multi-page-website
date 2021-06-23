@@ -5,31 +5,35 @@ import { Link } from 'react-router-dom';
 
 import './Button.scss';
 
-const Button = ({ text, className, type, onclick, href, to }) => {
+const Button = ({ text, className, type, onclick, href, to, isLoading }) => {
   const classes = cx({
     button: true,
     [className]: true,
     'button--primary': type === 'primary',
     'button--light': type === 'light',
     'button--dark': type === 'dark',
+    'button--loading': isLoading,
   });
 
   if (href) {
     return (
-      <a className={classes} href={href} onclick={onclick}>
+      <a className={classes} href={href} onClick={onclick} disabled={isLoading}>
         <span className='button__text'>{text}</span>
+        <span className='button__loader'></span>
       </a>
     );
   } else if (to) {
     return (
-      <Link className={classes} to={to} onClick={onclick}>
+      <Link className={classes} to={to} onClick={onclick} disabled={isLoading}>
         <span className='button__text'>{text}</span>
+        <span className='button__loader'></span>
       </Link>
     );
   } else {
     return (
-      <button className={classes} onClick={onclick}>
+      <button className={classes} onClick={onclick} disabled={isLoading}>
         <span className='button__text'>{text}</span>
+        <span className='button__loader'></span>
       </button>
     );
   }

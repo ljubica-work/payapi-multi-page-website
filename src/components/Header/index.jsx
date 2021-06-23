@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Contact from '../Contact';
+import ContactComponent from '../ContactComponent';
 
 import { ReactComponent as Iphone } from '../../assets/svg/iphone-header-mockup.svg';
 
@@ -18,7 +18,7 @@ const Header = ({ setIsPopupVisible }) => {
     <div className='header'>
       <Iphone className='header__image' />
       <div className='header__wrapper'>
-        <Contact
+        <ContactComponent
           text={contactText}
           alignment='header'
           title='Start building with our APIs for absolutely free.'

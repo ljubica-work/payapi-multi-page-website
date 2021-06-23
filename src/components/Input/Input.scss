@@ -9,7 +9,8 @@
   margin-top: 28px;
 
   &--error {
-    color: $errorOrange;
+    color: rgba($errorOrange, 0.5);
+    opacity: 1;
     .input__field {
       border-bottom: 1px solid rgba($errorOrange, 0.5);
     }
@@ -22,13 +23,17 @@
       border-bottom: 1px solid $sanJuanBlue;
     }
   }
+
+  &--disabled {
+    opacity: 0.5;
+  }
 }
 
 .input__field {
   @include simple-text;
   color: $sanJuanBlue;
   width: 100%;
-  height: 56px;
+  height: 35px;
   padding: 0 20px;
   outline: 0;
   border: none;
@@ -39,6 +44,7 @@
     height: 100px;
     margin-top: 10px;
     resize: none;
+    padding-top: 65px;
   }
 }
 
@@ -47,17 +53,17 @@
   padding: 0 20px;
   pointer-events: none;
   position: absolute;
-  transform: translate(0, 15px) scale(1);
+  transform: translate(0, 5px) scale(1);
   transform-origin: top left;
   transition: all 0.2s ease-out;
 }
 
 .input__label--floating {
-  transform: translate(0, -10px) scale(0.85);
+  transform: translate(0, -16px) scale(0.85);
 }
 .input__error {
   @include simple-text(11px, 13px);
   margin-left: 20px;
   position: absolute;
-  bottom: -20px;
+  bottom: -17px;
 }
