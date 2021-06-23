@@ -18,6 +18,7 @@ const Title = ({ text, className, size }) => {
 Title.propTypes = {
   text: PropTypes.string,
   className: PropTypes.string,
+  size: PropTypes.string,
 };
 
 export default Title;
