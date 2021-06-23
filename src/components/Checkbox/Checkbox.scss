@@ -1,0 +1,78 @@
+@import '../../styles/base.scss';
+
+.checkbox {
+  display: flex;
+}
+
+.checkbox__label {
+  @include simple-text(15px, 25px);
+  color: $sanJuanBlue;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-bottom: 24px;
+
+  &:hover {
+    .checkbox__checkmark {
+      background-color: $darkPink;
+    }
+  }
+
+  &--disabled {
+    .checkbox__checkmark {
+      background-color: rgba($sanJuanBlue, 0.05);
+    }
+    &:hover {
+      cursor: unset;
+      .checkbox__checkmark {
+        background-color: rgba($sanJuanBlue, 0.05);
+      }
+    }
+  }
+}
+
+.checkbox__input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+  transition: color 0.25s;
+  &:checked ~ .checkbox__checkmark {
+    background-color: $darkPink;
+    &::after {
+      display: block;
+    }
+  }
+}
+
+.checkbox__checkmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  background-color: rgba($sanJuanBlue, 0.25);
+  flex-shrink: 0;
+  margin-right: 25px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    display: none;
+    left: 9px;
+    top: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(405deg);
+    -ms-transform: rotate(405deg);
+    transform: rotate(405deg);
+  }
+}
