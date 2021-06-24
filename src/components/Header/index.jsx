@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Contact from '../Contact';
 
@@ -6,7 +7,7 @@ import { ReactComponent as Iphone } from '../../assets/svg/iphone-header-mockup.
 
 import './Header.scss';
 
-const Header = () => {
+const Header = ({ setIsPopupVisible }) => {
   const contactText = [
     'Have any questions? ',
     <a href='https://www.google.com/' className='contact__link' key='[1]'>
@@ -22,10 +23,15 @@ const Header = () => {
           alignment='header'
           title='Start building with our APIs for absolutely free.'
           size='larger'
+          setIsPopupVisible={setIsPopupVisible}
         />
       </div>
     </div>
   );
+};
+
+Header.propTypes = {
+  setIsPopupVisible: PropTypes.func,
 };
 
 export default Header;
