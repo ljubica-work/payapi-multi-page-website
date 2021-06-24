@@ -1,0 +1,97 @@
+@import '../../styles/base.scss';
+
+.about {
+  padding: 0 24px;
+
+  @include md {
+    padding: 0 40px;
+  }
+
+  @include lg {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+}
+
+.about__tite-wrapper {
+  margin-top: 20px;
+  @include lg {
+    width: 920px;
+    margin: 20px auto 0;
+  }
+}
+
+.about__title {
+  color: $sanJuanBlue;
+  text-align: center;
+
+  @include lg {
+    text-align: left;
+    width: 575px;
+  }
+}
+
+.about__text-title {
+  color: $sanJuanBlue;
+  @include title-h3(24px, 32px);
+  text-align: center;
+  @include md {
+    width: 223px;
+    flex-shrink: 0;
+    text-align: left;
+  }
+
+  @include lg {
+    width: 255px;
+    margin-right: 30px;
+  }
+}
+
+.about__paragraph {
+  color: $lightSJBlue;
+
+  @include md {
+    text-align: left;
+  }
+}
+
+.about__text-wrapper {
+  margin-top: 48px;
+
+  @include md {
+    margin-top: 64px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @include lg {
+    max-width: 920px;
+    margin: 64px auto 0;
+  }
+}
+
+.about__image {
+  background: url(../../assets/images/about-img-small.png);
+  height: 300px;
+  width: calc(100% + 48px);
+  margin-left: -24px;
+  margin-top: 76px;
+  margin-bottom: 48px;
+
+  @include md {
+    background: url(../../assets/images/about-img.png);
+    width: calc(100% + 80px);
+    margin-left: -40px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  @include lg {
+    height: 500px;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+  }
+}

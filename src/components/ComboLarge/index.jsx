@@ -28,7 +28,11 @@ const ComboLarge = ({ type, reverse, title, text }) => {
       <Image className='combo-large__image' />
       <div className='combo-large__content'>
         <Title className='combo-large__title' text={title} />
-        <Paragraph className='combo-large_paragraph' text={text} />
+        <Paragraph
+          className='combo-large_paragraph'
+          text={text}
+          alignment='left'
+        />
       </div>
     </div>
   );

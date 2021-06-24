@@ -1,9 +1,12 @@
 @import '../../styles/base.scss';
 
+.paragraph {
+  text-align: center;
+}
+
 .paragraph__text {
   @include simple-text;
   width: 100%;
-  text-align: center;
 }
 
 .paragraph--center {
