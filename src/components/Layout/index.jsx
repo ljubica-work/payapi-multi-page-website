@@ -20,6 +20,7 @@ const Layout = ({ children }) => {
       <Popup
         text='Thank you for scheduling a demo. We will get in touch with you soon.'
         popup={isPopupVisible}
+        setIsPopupVisible={setIsPopupVisible}
       />
       <MenuMobile />
       <MenuDesktop />

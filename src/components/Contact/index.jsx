@@ -7,6 +7,8 @@ import Button from '../Button';
 
 import './Contact.scss';
 
+const TIMEOUT_DURATION = 4000;
+
 const Contact = ({ text, size, title, setIsPopupVisible }) => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -28,7 +30,7 @@ const Contact = ({ text, size, title, setIsPopupVisible }) => {
     setIsPopupVisible(true);
     setTimeout(function () {
       setIsPopupVisible(false);
-    }, 4000);
+    }, TIMEOUT_DURATION);
   };
 
   const classes = cx({
