@@ -28,7 +28,7 @@ const Contact = ({ text, size, title, setIsPopupVisible }) => {
 
   const showPopup = () => {
     setIsPopupVisible(true);
-    setTimeout(function () {
+    setTimeout(() => {
       setIsPopupVisible(false);
     }, TIMEOUT_DURATION);
   };
