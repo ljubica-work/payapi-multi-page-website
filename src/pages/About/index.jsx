@@ -39,8 +39,8 @@ const About = () => {
         <div className='about__image'></div>
         <Infographic className='about__infographic' />
         {renderText(bottomContent)}
-        <Contact title='Ready to start?' size='smaller' />
       </div>
+      <Contact title='Ready to start?' size='smaller' />
     </Layout>
   );
 };

@@ -25,9 +25,9 @@ const Pricing = () => {
         <div className='pricing--inner'>
           <Title text='Pricing' className='pricing__title' size='smaller' />
           <div className='pricing__offer-columns'>{renderOfferColumns()}</div>
-          <Contact size='smaller' title='Ready to start?' />
         </div>
       </div>
+      <Contact size='smaller' title='Ready to start?' />
     </Layout>
   );
 };
