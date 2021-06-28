@@ -6,12 +6,16 @@ import ComboLarge from '../../components/ComboLarge';
 import ComboSmall from '../../components/ComboSmall';
 import ContactComponent from '../../components/ContactComponent';
 import Layout from '../../components/Layout';
+import Circle from '../../components/Circle';
 
 import './Home.scss';
 
 const Home = () => {
   return (
     <Layout>
+      <div className='home__circle-wrapper'>
+        <Circle className='home__circle' />
+      </div>
       <Header />
       <Banner />
       <ComboLarge

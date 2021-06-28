@@ -1,1 +1,20 @@
 @import '../../styles/base.scss';
+
+.home__contact-wrapper {
+  @include lg {
+    padding: 0 24px;
+  }
+}
+
+.home__circle-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.home__circle {
+  background: $sanJuanBlue;
+  opacity: 0.25;
+  top: -560px;
+}
