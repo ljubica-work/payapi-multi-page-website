@@ -23,3 +23,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 - [ReactJS](https://reactjs.org/)
 - [SCSS](https://sass-lang.com/documentation/syntax)
 - [BEM](http://getbem.com/)
+
+## Reflection
+
+The main purpose of this project was to practise making responsive client-side applications with React and SCSS, by following the design as pixel-perfect as possible.
