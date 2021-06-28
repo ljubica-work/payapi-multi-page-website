@@ -4,7 +4,7 @@ import routes from './constants/routes';
 
 import Home from './pages/Home';
 import Pricing from './pages/Pricing';
-import ContactPage from './pages/ContactPage';
+import Contact from './pages/Contact';
 import About from './pages/About';
 
 import './styles/index.scss';
@@ -22,7 +22,7 @@ const App = () => {
         <Pricing />
       </Route>
       <Route path={routes.CONTACT}>
-        <ContactPage />
+        <Contact />
       </Route>
     </Switch>
   );

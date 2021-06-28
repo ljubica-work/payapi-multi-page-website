@@ -1,0 +1,101 @@
+@import '../../styles/base.scss';
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba($black, 0.4);
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  &--open {
+    display: flex;
+  }
+}
+
+.modal__box {
+  padding: 20px;
+  background: $linkWaterWhite;
+  position: relative;
+  border-radius: 24px;
+  box-shadow: 20px 20px 50px 10px rgba(54, 83, 107, 0.5);
+  width: 80%;
+
+  @include md {
+    width: 450px;
+  }
+
+  @include lg {
+    width: 600px;
+  }
+}
+
+.modal__title {
+  @include title-h3;
+  color: $sanJuanBlue;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.modal__close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.modal__item {
+  @include simple-text;
+  padding: 5px 40px;
+  border-bottom: 1px solid rgba($sanJuanBlue, 0.5);
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal__item-title {
+  font-weight: 900;
+  text-transform: capitalize;
+  color: $mirageBlue;
+}
+
+.modal__item-data {
+  color: $sanJuanBlue;
+  margin-left: 10px;
+  text-align: center;
+}
+
+.modal__close-sign {
+  width: 22px;
+  height: 3px;
+  background: $sanJuanBlue;
+  display: block;
+  border-radius: 10px;
+  transform: rotate(-45deg);
+
+  &::before {
+    content: '';
+    width: 22px;
+    height: 3px;
+    background: $sanJuanBlue;
+    display: block;
+    border-radius: 10px;
+    display: block;
+    position: absolute;
+    transform: rotate(90deg);
+  }
+}
+
+.modal__close-button {
+  border: none;
+  outline: none;
+  background: transparent;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}

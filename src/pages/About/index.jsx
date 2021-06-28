@@ -6,7 +6,7 @@ import Layout from '../../components/Layout';
 import Infographic from '../../components/Infographic';
 import Title from '../../components/Title';
 import Paragraph from '../../components/Paragraph';
-import Contact from '../../components/Contact';
+import ContactComponent from '../../components/ContactComponent';
 
 import './About.scss';
 
@@ -40,7 +40,7 @@ const About = () => {
         <Infographic className='about__infographic' />
         {renderText(bottomContent)}
       </div>
-      <Contact title='Ready to start?' size='smaller' />
+      <ContactComponent title='Ready to start?' size='smaller' />
     </Layout>
   );
 };

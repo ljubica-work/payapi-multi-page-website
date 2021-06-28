@@ -4,12 +4,18 @@ import cx from 'classnames';
 
 import './Input.scss';
 
-const Input = ({ type, label }) => {
-  const [inputState, setInputState] = useState('normal');
-  const [labelState, setLabelState] = useState('normal');
-  const [inputValue, setInputValue] = useState('');
-  const [message, setMessage] = useState('');
-
+const Input = ({
+  type,
+  label,
+  name,
+  onChange,
+  value,
+  error,
+  onBlur,
+  onFocus,
+  isLoading,
+}) => {
+  const [isFocused, setIsFocused] = useState(false);
   const TextField = type === 'textarea' ? 'textarea' : 'input';
 
   const textFieldClasses = cx({
@@ -19,50 +25,15 @@ const Input = ({ type, label }) => {
 
   const labelClasses = cx({
     input__label: true,
-    'input__label--floating': labelState === 'floating',
+    'input__label--floating': isFocused || value.length > 0,
   });
 
   const inputClasses = cx({
     input: true,
-    'input--active': inputState === 'active',
-    'input--error': inputState === 'error',
+    'input--active': isFocused || (value.length > 0 && !error),
+    'input--error': error,
+    'input--disabled': isLoading,
   });
-
-  function onBlur(e) {
-    if (!e.target.value) {
-      setLabelState('normal');
-    }
-    validateInput();
-  }
-
-  const validateInput = () => {
-    if (!inputValue) {
-      setInputState('error');
-      setMessage("This field can't be empty");
-    } else if (type === 'email') {
-      const pattern = new RegExp(
-        /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i,
-      );
-      if (!pattern.test(inputValue)) {
-        setInputState('error');
-        setMessage('Enter a valid email adress');
-      } else {
-        setInputState('normal');
-      }
-    } else {
-      setInputState('normal');
-    }
-  };
-
-  const onChange = (e) => {
-    setInputValue(e.target.value);
-  };
-
-  const onFocus = () => {
-    setInputState('active');
-    setLabelState('floating');
-    setMessage('');
-  };
 
   return (
     <>
@@ -70,12 +41,22 @@ const Input = ({ type, label }) => {
         <TextField
           type={type}
           className={textFieldClasses}
-          onFocus={onFocus}
-          onBlur={(e) => onBlur(e)}
-          onChange={(e) => onChange(e)}
+          onFocus={() => {
+            onFocus(name);
+            setIsFocused(true);
+          }}
+          onBlur={(e) => {
+            onBlur(name, e.target.value);
+            setIsFocused(false);
+          }}
+          onChange={onChange}
+          name={name}
+          value={value}
+          autoComplete='off'
+          disabled={isLoading}
         />
         <label className={labelClasses}>{label}</label>
-        <span className='input__error'>{message}</span>
+        <span className='input__error'>{error}</span>
       </div>
     </>
   );
@@ -84,6 +65,13 @@ const Input = ({ type, label }) => {
 Input.propTypes = {
   type: PropTypes.string,
   label: PropTypes.string,
+  name: PropTypes.string,
+  onChange: PropTypes.func,
+  value: PropTypes.string,
+  error: PropTypes.string,
+  onBlur: PropTypes.func,
+  onFocus: PropTypes.func,
+  isLoading: PropTypes.bool,
 };
 
 export default Input;

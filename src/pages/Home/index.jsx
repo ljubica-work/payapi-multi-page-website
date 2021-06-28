@@ -4,7 +4,7 @@ import Header from '../../components/Header';
 import Banner from '../../components/Banner';
 import ComboLarge from '../../components/ComboLarge';
 import ComboSmall from '../../components/ComboSmall';
-import Contact from '../../components/Contact';
+import ContactComponent from '../../components/ContactComponent';
 import Layout from '../../components/Layout';
 
 import './Home.scss';
@@ -26,7 +26,9 @@ const Home = () => {
         reverse
       />
       <ComboSmall />
-      <Contact size='smaller' title='Ready to start?' />
+      <div className='home__contact-wrapper'>
+        <ContactComponent size='smaller' title='Ready to start?' />
+      </div>
     </Layout>
   );
 };
