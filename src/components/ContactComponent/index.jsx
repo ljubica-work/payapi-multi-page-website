@@ -11,7 +11,7 @@ import './ContactComponent.scss';
 const POPUP_DURATION = 4000;
 const LOADER_DURATION = 2000;
 
-const Contact = ({ text, size, title, setIsPopupVisible }) => {
+const Contact = ({ text, size, title, setIsPopupVisible, className }) => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -57,6 +57,7 @@ const Contact = ({ text, size, title, setIsPopupVisible }) => {
     contact: true,
     'contact--smaller': size === 'smaller',
     'contact--larger': size === 'larger',
+    [className]: className,
   });
 
   const inputClasses = cx({
@@ -103,6 +104,7 @@ Contact.propTypes = {
   size: PropTypes.string,
   title: PropTypes.string,
   setIsPopupVisible: PropTypes.func,
+  className: PropTypes.string,
 };
 
 export default Contact;

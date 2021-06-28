@@ -26,9 +26,11 @@ const Home = () => {
         reverse
       />
       <ComboSmall />
-      <div className='home__contact-wrapper'>
-        <ContactComponent size='smaller' title='Ready to start?' />
-      </div>
+      <ContactComponent
+        size='smaller'
+        title='Ready to start?'
+        className='home__contact'
+      />
     </Layout>
   );
 };

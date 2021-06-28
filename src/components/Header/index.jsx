@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import ContactComponent from '../ContactComponent';
 
-import { ReactComponent as Iphone } from '../../assets/svg/iphone-header-mockup.svg';
+import Iphone from '../../assets/svg/iphone-header-mockup.svg';
 
 import './Header.scss';
 
@@ -16,7 +16,7 @@ const Header = ({ setIsPopupVisible }) => {
   ];
   return (
     <div className='header'>
-      <Iphone className='header__image' />
+      <img src={Iphone} className='header__image' alt='' />
       <div className='header__wrapper'>
         <ContactComponent
           text={contactText}
