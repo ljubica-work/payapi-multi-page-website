@@ -80,6 +80,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  z-index: 2;
 
   @include md {
     background: url(../../assets/images/about-img.png);
@@ -96,5 +97,17 @@
     position: relative;
     left: 50%;
     margin-left: -50vw;
+  }
+}
+
+.about__circle {
+  background: $sanJuanBlue;
+  opacity: 0.25;
+  left: -520px;
+  display: none;
+
+  @include lg {
+    display: block;
+    bottom: 710px;
   }
 }

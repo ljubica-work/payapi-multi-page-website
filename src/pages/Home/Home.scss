@@ -6,15 +6,22 @@
   }
 }
 
-.home__circle-wrapper {
+.home__circle-bottom-wrapper {
   width: 100%;
-  display: flex;
-  justify-content: center;
   position: relative;
 }
 
-.home__circle {
-  background: $sanJuanBlue;
-  opacity: 0.25;
-  top: -560px;
+.home__circle--bottom {
+  display: none;
+  @include lg {
+    display: block;
+    background: $sanJuanBlue;
+    opacity: 0.25;
+    top: -230px;
+    right: -580px;
+  }
+  @include xl {
+    top: -230px;
+    right: -470px;
+  }
 }

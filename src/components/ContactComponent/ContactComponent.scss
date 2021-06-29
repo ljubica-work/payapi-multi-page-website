@@ -133,6 +133,7 @@
   flex-direction: column;
   align-items: center;
   position: relative;
+  z-index: 2;
 
   @include lg {
     align-items: flex-start;

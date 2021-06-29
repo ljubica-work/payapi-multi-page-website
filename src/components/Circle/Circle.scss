@@ -5,4 +5,44 @@
   width: 780px;
   border-radius: 50%;
   position: absolute;
+
+  &--bigger {
+    background: $sanJuanBlue;
+    opacity: 0.25;
+    top: -520px;
+    margin: auto;
+    right: 50%;
+    transform: translateX(50%);
+
+    @include md {
+      height: 950px;
+      width: 950px;
+      top: -600px;
+    }
+
+    @include lg {
+      height: 780px;
+      width: 780px;
+      top: -190px;
+      right: -130px;
+      transform: unset;
+    }
+  }
+
+  &--basic {
+    background: $sanJuanBlue;
+    opacity: 0.25;
+    top: -656px;
+    right: -497px;
+    z-index: 8;
+
+    @include md {
+      top: -480px;
+    }
+
+    @include lg {
+      top: -543px;
+      right: -113px;
+    }
+  }
 }

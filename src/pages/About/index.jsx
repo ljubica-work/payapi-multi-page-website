@@ -7,6 +7,7 @@ import Infographic from '../../components/Infographic';
 import Title from '../../components/Title';
 import Paragraph from '../../components/Paragraph';
 import ContactComponent from '../../components/ContactComponent';
+import Circle from '../../components/Circle';
 
 import './About.scss';
 
@@ -37,6 +38,7 @@ const About = () => {
         </div>
         {renderText(topContent)}
         <div className='about__image'></div>
+        <Circle className='about__circle' />
         <Infographic className='about__infographic' />
         {renderText(bottomContent)}
       </div>
