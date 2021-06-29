@@ -12,10 +12,7 @@ import './Home.scss';
 
 const Home = () => {
   return (
-    <Layout>
-      <div className='home__circle-wrapper'>
-        <Circle className='home__circle' />
-      </div>
+    <Layout className='home__layout'>
       <Header />
       <Banner />
       <ComboLarge
