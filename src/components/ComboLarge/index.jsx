@@ -25,7 +25,7 @@ const ComboLarge = ({ type, reverse, title, text }) => {
 
   return (
     <div className={classes}>
-      <img src={Image} alt='' className='combo-large__image' />
+      <img src={Image} alt='Iphone' className='combo-large__image' />
       <div className='combo-large__content'>
         <Title className='combo-large__title' text={title} />
         <Paragraph

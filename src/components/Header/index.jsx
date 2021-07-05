@@ -16,7 +16,7 @@ const Header = ({ setIsPopupVisible }) => {
   ];
   return (
     <div className='header'>
-      <img src={Iphone} className='header__image' alt='' />
+      <img src={Iphone} className='header__image' alt='Iphone' />
       <div className='header__wrapper'>
         <ContactComponent
           text={contactText}
