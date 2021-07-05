@@ -16,6 +16,7 @@
 
 .header__image {
   width: 280px;
+  z-index: 1;
   margin: 0 -30px -100px 0;
 
   @include lg {
