@@ -39,6 +39,8 @@
   border: none;
   border-bottom: 1px solid rgba($sanJuanBlue, 0.5);
   background-color: transparent;
+  -webkit-appearance: none;
+  border-radius: 0;
 
   &--textarea {
     height: 100px;

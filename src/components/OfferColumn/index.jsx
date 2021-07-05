@@ -1,6 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
+import routes from '../../constants/routes';
 
 import Paragraph from '../Paragraph';
 import Button from '../Button';
@@ -45,6 +46,7 @@ const OfferColumn = ({ plan, className }) => {
           text='Request Access'
           className='offer-column__button'
           type='dark'
+          to={routes.CONTACT}
         />
       </div>
     </div>

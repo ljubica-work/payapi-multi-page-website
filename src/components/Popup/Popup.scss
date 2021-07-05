@@ -19,6 +19,10 @@
   transition: all 0.3s ease-out;
   cursor: pointer;
 
+  &:active {
+    -webkit-tap-highlight-color: transparent;
+  }
+
   @include md {
     width: 400px;
   }

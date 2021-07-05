@@ -12,7 +12,6 @@
 
   @include lg {
     max-width: 1110px;
-    padding: 0;
   }
 
   &--smaller {
@@ -67,8 +66,8 @@
   padding: 15px 25px;
   @include simple-text(15px, 18px);
   font-weight: 700;
-  margin-bottom: 16px;
   box-sizing: border-box;
+  margin-bottom: 16px;
 
   &::placeholder {
     opacity: 0.5;
@@ -79,7 +78,7 @@
   }
 
   @include md {
-    margin-bottom: 0;
+    margin: 0;
     width: calc(100% - 173px);
     box-shadow: none;
   }
