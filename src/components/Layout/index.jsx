@@ -12,16 +12,21 @@ import './Layout.scss';
 
 const Layout = ({ children, className }) => {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
-  const childrenWithProps = React.Children.map(children, (child) =>
-    React.cloneElement(child, {
-      setIsPopupVisible: setIsPopupVisible,
-    }),
-  );
+
+  const childrenWithProps = React.Children.map(children, (child) => {
+    if (child.type !== 'div') {
+      return React.cloneElement(child, {
+        setIsPopupVisible: setIsPopupVisible,
+      });
+    }
+    return child;
+  });
 
   const circleClass = cx({
     'circle--bigger': className === 'home__layout',
     'circle--basic': !className,
   });
+
   return (
     <div className='layout'>
       <Popup
