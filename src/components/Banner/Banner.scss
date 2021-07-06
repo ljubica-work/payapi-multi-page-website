@@ -46,6 +46,7 @@
 .banner__circle {
   top: -610px;
   background-color: $sanJuanBlue;
+  opacity: 0.3;
 
   @include md {
     top: -545px;

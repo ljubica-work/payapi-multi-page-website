@@ -19,6 +19,7 @@
   background-color: $sanJuanBlue;
   position: absolute;
   top: 190px;
+  opacity: 0.3;
 
   @include md {
     top: -100px;

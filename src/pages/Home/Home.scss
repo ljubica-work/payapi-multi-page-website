@@ -1,1 +1,27 @@
 @import '../../styles/base.scss';
+
+.home__contact-wrapper {
+  @include lg {
+    padding: 0 24px;
+  }
+}
+
+.home__circle-bottom-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.home__circle--bottom {
+  display: none;
+  @include lg {
+    display: block;
+    background: $sanJuanBlue;
+    opacity: 0.25;
+    top: -230px;
+    right: -580px;
+  }
+  @include xl {
+    top: -230px;
+    right: -470px;
+  }
+}
