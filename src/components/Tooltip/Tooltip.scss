@@ -1,0 +1,65 @@
+@import '../../styles/base.scss';
+
+.tooltip {
+  min-width: 130px;
+  max-width: 200px;
+  padding: 12px;
+  background-color: $lightSJBlue;
+  border-radius: 20px;
+  display: none;
+  position: fixed;
+
+  &::before {
+    content: '';
+    left: 50%;
+    border: solid transparent;
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-width: $tooltip-arrow-size;
+    margin-left: -$tooltip-arrow-size;
+  }
+
+  &--visible {
+    display: inline-block;
+  }
+
+  &--top {
+    &::before {
+      top: 100%;
+      border-top-color: $lightSJBlue;
+    }
+  }
+
+  &--bottom {
+    &::before {
+      bottom: 100%;
+      border-bottom-color: $lightSJBlue;
+    }
+  }
+
+  &--left {
+    &::before {
+      left: auto;
+      right: calc(#{$tooltip-arrow-size} * -2);
+      top: 50%;
+      transform: translateX(-4px) translateY(-50%);
+      border-left-color: $lightSJBlue;
+    }
+  }
+
+  &--right {
+    &::before {
+      left: -$tooltip-arrow-size;
+      top: 50%;
+      transform: translateX(4px) translateY(-50%);
+      border-right-color: $lightSJBlue;
+    }
+  }
+}
+
+.tooltip__text {
+  @include simple-text(11px, 16px);
+  color: $linkWaterWhite;
+}

@@ -21,8 +21,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 ## Technologies used
 
 - [ReactJS](https://reactjs.org/)
-- [SCSS](https://sass-lang.com/documentation/syntax)
-- [BEM](http://getbem.com/)
+- [SCSS](https://sass-lang.com/documentation/syntax) (with [BEM](http://getbem.com/) methodology)
 
 ## Reflection
 
